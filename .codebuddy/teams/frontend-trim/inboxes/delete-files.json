@@ -1,0 +1,29 @@
+[
+  {
+    "id": "msg-1777082245435-1dt3lo",
+    "from": "team-lead",
+    "to": "delete-files",
+    "type": "message",
+    "content": "Please report your progress when done. Focus on making sure all deletions are completed successfully.",
+    "timestamp": "2026-04-25T01:57:25.435Z",
+    "read": true
+  },
+  {
+    "id": "msg-1777082254386-u9u16e",
+    "from": "team-lead",
+    "to": "delete-files",
+    "type": "message",
+    "content": "What is your current status? Have you completed the file deletions?",
+    "timestamp": "2026-04-25T01:57:34.386Z",
+    "read": true
+  },
+  {
+    "id": "shutdown-1777082771470",
+    "from": "team-lead",
+    "to": "delete-files",
+    "type": "shutdown_request",
+    "content": "{\"type\":\"shutdown_request\",\"request_id\":\"shutdown-1777082771470\",\"reason\":\"Work is done. Please shut down.\",\"from\":\"team-lead\",\"timestamp\":\"2026-04-25T02:06:11.470Z\"}",
+    "timestamp": "2026-04-25T02:06:11.471Z",
+    "read": true
+  }
+]

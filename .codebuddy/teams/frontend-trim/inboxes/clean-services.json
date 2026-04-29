@@ -1,0 +1,20 @@
+[
+  {
+    "id": "msg-1777082248934-eej8h6",
+    "from": "team-lead",
+    "to": "clean-services",
+    "type": "message",
+    "content": "Please report your progress when done. Focus on functional code changes - removing switch cases, imports, and logic branches for removed platforms. String literals in translations and CSS are lower priority.",
+    "timestamp": "2026-04-25T01:57:28.934Z",
+    "read": true
+  },
+  {
+    "id": "shutdown-1777082560157",
+    "from": "team-lead",
+    "to": "clean-services",
+    "type": "shutdown_request",
+    "content": "{\"type\":\"shutdown_request\",\"request_id\":\"shutdown-1777082560157\",\"reason\":\"Work is done. Please shut down.\",\"from\":\"team-lead\",\"timestamp\":\"2026-04-25T02:02:40.157Z\"}",
+    "timestamp": "2026-04-25T02:02:40.157Z",
+    "read": true
+  }
+]

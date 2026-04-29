@@ -1,0 +1,28 @@
+{
+  "name": "frontend-trim",
+  "leadAgentId": "8fde13054757449faf62da954a0641ef",
+  "workspacePath": "d:/cockpit-tools-main/cockpit-tools-main",
+  "createdAt": "2026-04-25T01:56:34.284Z",
+  "options": {
+    "workspacePath": "d:/cockpit-tools-main/cockpit-tools-main",
+    "isAutoTeam": false
+  },
+  "members": [
+    {
+      "memberId": "team-lead@frontend-trim",
+      "name": "team-lead",
+      "role": "Team Lead - coordinates the team and interacts with the user"
+    },
+    {
+      "memberId": "clean-core@frontend-trim",
+      "name": "clean-core",
+      "role": "清理核心文件中的平台引用"
+    },
+    {
+      "memberId": "clean-services@frontend-trim",
+      "name": "clean-services",
+      "role": "清理服务/展示/工具文件中的平台引用"
+    }
+  ],
+  "isAutoTeam": false
+}
