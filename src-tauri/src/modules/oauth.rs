@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-const CLIENT_ID: &str = env!("OAUTH_CLIENT_ID");
-const CLIENT_SECRET: &str = env!("OAUTH_CLIENT_SECRET");
+const CLIENT_ID: &str = option_env!("OAUTH_CLIENT_ID").unwrap_or("");
+const CLIENT_SECRET: &str = option_env!("OAUTH_CLIENT_SECRET").unwrap_or("");
 const TOKEN_URL: &str = "https://oauth2.googleapis.com/token";
 const USERINFO_URL: &str = "https://www.googleapis.com/oauth2/v2/userinfo";
 const AUTH_URL: &str = "https://accounts.google.com/o/oauth2/v2/auth";

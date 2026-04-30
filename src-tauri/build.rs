@@ -7,7 +7,7 @@ fn link_macos_swift_runtime_rpaths() {
 }
 
 fn load_dotenv() {
-    // Look for .env in workspace root (one level up from src-tauri/)
+    // Try .env file first (local development)
     for path in &["../.env", ".env"] {
         if std::path::Path::new(path).exists() {
             if let Ok(content) = std::fs::read_to_string(path) {
@@ -23,7 +23,20 @@ fn load_dotenv() {
                     }
                 }
             }
-            break;
+            return;
+        }
+    }
+
+    // Fallback: read from process environment (CI builds)
+    let keys = [
+        "OAUTH_CLIENT_ID",
+        "OAUTH_CLIENT_SECRET",
+        "GEMINI_OAUTH_CLIENT_ID",
+        "GEMINI_OAUTH_CLIENT_SECRET",
+    ];
+    for key in &keys {
+        if let Ok(value) = std::env::var(key) {
+            println!("cargo:rustc-env={}={}", key, value);
         }
     }
 }
