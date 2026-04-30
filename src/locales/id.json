@@ -1678,7 +1678,11 @@
       "label": "Format ekspor",
       "cockpitTools": "Cockpit Tools",
       "sub2api": "Format sub2api",
-      "cpa": "Format cpa"
+      "cpa": "Format cpa",
+      "downloadAll": "Download All",
+      "cpaCardTitle": "Account {{index}}",
+      "savedFolder": "Saved Folder",
+      "savedPath": "Saved Path"
     },
     "localAccess": {
       "title": "Layanan API",

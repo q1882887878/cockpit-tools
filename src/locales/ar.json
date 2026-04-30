@@ -1675,7 +1675,11 @@
       "label": "تنسيق التصدير",
       "cockpitTools": "Cockpit Tools",
       "sub2api": "تنسيق sub2api",
-      "cpa": "تنسيق cpa"
+      "cpa": "تنسيق cpa",
+      "downloadAll": "Download All",
+      "cpaCardTitle": "Account {{index}}",
+      "savedFolder": "Saved Folder",
+      "savedPath": "Saved Path"
     },
     "localAccess": {
       "title": "خدمة API",

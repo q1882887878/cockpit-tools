@@ -1629,7 +1629,11 @@
       "label": "Định dạng xuất",
       "cockpitTools": "Cockpit Tools",
       "sub2api": "Định dạng sub2api",
-      "cpa": "Định dạng cpa"
+      "cpa": "Định dạng cpa",
+      "downloadAll": "Download All",
+      "cpaCardTitle": "Account {{index}}",
+      "savedFolder": "Saved Folder",
+      "savedPath": "Saved Path"
     },
     "localAccess": {
       "title": "Dịch vụ API",
