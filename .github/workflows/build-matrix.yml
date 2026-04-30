@@ -115,6 +115,38 @@ jobs:
           set -euo pipefail
           npx tauri build --ci ${{ matrix.args }} 2>&1 | tee "build-${{ matrix.label }}.log"
 
+      - name: Code sign macOS app & rebuild DMG
+        if: startsWith(matrix.platform, 'macos')
+        shell: bash
+        run: |
+          set -euo pipefail
+          release_dir="${{ matrix.release_dir }}"
+          app_path="$release_dir/bundle/macos/Cockpit Tools.app"
+
+          if [ ! -d "$app_path" ]; then
+            echo "::warning::No .app found at $app_path"
+            exit 0
+          fi
+
+          # Ad-hoc sign the .app
+          echo "Signing $app_path..."
+          codesign --force --deep --sign - "$app_path"
+          codesign --verify --deep "$app_path" && echo "✅ Signed and verified"
+
+          # Recreate DMGs with signed .app
+          dmg_dir="$release_dir/bundle/dmg"
+          if [ -d "$dmg_dir" ]; then
+            for dmg in "$dmg_dir"/*.dmg; do
+              [ -f "$dmg" ] || continue
+              dmg_name="$(basename "$dmg")"
+              volname="${dmg_name%.dmg}"
+              echo "Recreating DMG: $dmg_name..."
+              rm -f "$dmg"
+              hdiutil create -volname "$volname" -srcfolder "$app_path" -ov -format UDZO "$dmg"
+              echo "✅ $dmg_name ($(du -h "$dmg" | cut -f1))"
+            done
+          fi
+
       - name: Summarize warnings
         if: always()
         shell: bash
